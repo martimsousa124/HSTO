@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSTO Seafront Rooms</title>
+  <meta name="description" content="Descubra a Nazaré: ondas gigantes, praia dourada, gastronomia e pores do sol a poucos passos do HSTO Seafront Rooms.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css?v=42">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+  <style>
+    .exp-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:7rem; }
+    .exp-detail-grid:nth-child(even) .exp-detail-img { order:2; }
+    .exp-detail-grid:nth-child(even) .exp-detail-text { order:1; }
+    .exp-detail-img img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px; }
+    .exp-detail-text .label { margin-bottom:1rem; }
+    .exp-detail-text h2 { margin-bottom:1.25rem; }
+    .exp-detail-text p { color:var(--text-light); margin-bottom:1rem; }
+    .tip-list { margin-top:1.5rem; display:flex; flex-direction:column; gap:.6rem; }
+    .tip-item { display:flex; align-items:flex-start; gap:.75rem; }
+    .tip-icon { flex-shrink:0; margin-top:.1rem; width:18px; height:18px; stroke:var(--gold); }
+    @media(max-width:768px){ .exp-detail-grid { grid-template-columns:1fr; gap:2rem; } .exp-detail-grid:nth-child(even) .exp-detail-img,.exp-detail-grid:nth-child(even) .exp-detail-text { order:unset; } }
+  </style>
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-d" src="images/brand/symbol-dark.png" alt="HSTO"><img class="logo-w" src="images/brand/symbol-white.png" alt=""></a>
+      <nav class="nav">
+        <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a><a href="experiencia/" class="active">Nazaré</a>
+        <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher"><button data-lang-btn="en" class="active">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+        <a href="suites/" class="btn-header"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a><a href="experiencia/">Nazaré</a>
+  <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+  <div class="lang-switcher" style="margin-top:1rem;"><button data-lang-btn="en">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+  <a href="suites/" class="btn btn-primary mobile-book"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+</nav>
+
+<div class="page-hero" style="padding-top: var(--header-h);">
+  <div class="page-hero-bg fx-img" data-fx style="--fx-src:url('../images/bg-nazare.jpg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container"><div class="page-hero-content">
+    <p class="label"><span class="en">The Destination</span><span class="pt">O Destino</span></p>
+    <h1 class="display-1"><span class="en">Experience<br>Nazaré</span><span class="pt bl">Viver a Nazaré</span></h1>
+  </div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="max-width:720px; margin-inline:auto; text-align:center;" class="reveal">
+      <p class="label" style="margin-bottom:1rem;"><span class="en">Right outside your door</span><span class="pt">À porta de casa</span></p>
+      <h2 class="display-2" style="margin-bottom:1.5rem;"><span class="en">A stay in <em>Nazaré</em>, a memory to last.</span><span class="pt bl">Uma estadia na <em>Nazaré</em>, uma memória para sempre.</span></h2>
+      <p class="body-lg" style="color:var(--text-light);"><span class="en">From the record-breaking waves to seafood dinners in the old village, everything is close. We share our own favourite spots at check-in.</span><span class="pt">Das ondas recordistas aos jantares de marisco na vila antiga, tudo fica perto. No check-in partilhamos os nossos sítios preferidos.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal"><img src="images/img_ondaspraiadonorte.jpg" alt="Ondas gigantes na Praia do Norte, Nazaré" style="object-position:50% 45%;" loading="lazy"></div>
+      <div class="exp-detail-text reveal reveal-delay-1">
+        <p class="label"><span class="en">World Record</span><span class="pt">Recorde Mundial</span></p>
+        <h2 class="display-3"><span class="en">The Waves of<br>Praia do Norte</span><span class="pt bl">As Ondas da<br>Praia do Norte</span></h2>
+        <p><span class="en">Beneath Nazaré lies Europe's deepest submarine canyon. It funnels Atlantic swells into the bay and creates the world's largest rideable waves. A 26.21 m wave was surfed here in 2020.</span><span class="pt">Sob a Nazaré está o maior canhão submarino da Europa. Canaliza as ondulações do Atlântico para a baía e cria as maiores ondas surfadas do mundo. Em 2020 foi surfada aqui uma onda de 26,21 m.</span></p>
+        <div class="tip-list">
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><span class="en">Best viewed from the Forte promontory</span><span class="pt">Melhor vista do promontório do Forte</span></span></div>
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span><span class="en">Wave season: October to March</span><span class="pt">Época de ondas: outubro a março</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1662474382995-fa2ad7b61f15?w=900&q=80" alt="Praia da Nazaré" loading="lazy"></div>
+      <div class="exp-detail-text reveal">
+        <p class="label"><span class="en">Summer</span><span class="pt">Verão</span></p>
+        <h2 class="display-3"><span class="en">The Main Beach</span><span class="pt">A Praia Principal</span></h2>
+        <p><span class="en">Over 3 kilometres of golden sand, with colourful fishing boats and the old village as a backdrop. Best swimming from June to September.</span><span class="pt">Mais de 3 quilómetros de areia dourada, com barcos de pesca coloridos e a vila antiga como cenário. Melhor época de banhos: junho a setembro.</span></p>
+        <div class="tip-list">
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg><span><span class="en">Come back to the seafront for the sunset</span><span class="pt">Volte à beira-mar para o pôr do sol</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Marisco português" loading="lazy"></div>
+      <div class="exp-detail-text reveal reveal-delay-1">
+        <p class="label"><span class="en">Gastronomy</span><span class="pt">Gastronomia</span></p>
+        <h2 class="display-3"><span class="en">Seafood, wine<br>&amp; Atlantic flavour</span><span class="pt bl">Peixe, vinho<br>e sabor atlântico</span></h2>
+        <p><span class="en">Grilled sea bass, caldeirada in a tiled tavern, percebes pulled from the rocks that morning. Honest, exceptional food.</span><span class="pt">Robalo grelhado, caldeirada numa tasca de azulejos, percebes colhidos de manhã nas rochas. Comida honesta e excecional.</span></p>
+        <div class="tip-list">
+          <div class="tip-item"><svg class="i tip-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span><span class="en">We share our restaurant list with every guest</span><span class="pt">Partilhamos a nossa lista de restaurantes com todos os hóspedes</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-detail-grid">
+      <div class="exp-detail-img reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80" alt="Tradições da Nazaré" loading="lazy"></div>
+      <div class="exp-detail-text reveal">
+        <p class="label"><span class="en">Traditions</span><span class="pt">Tradições</span></p>
+        <h2 class="display-3"><span class="en">Living<br>Traditions</span><span class="pt bl">Tradições<br>Vivas</span></h2>
+        <p><span class="en">Local women still wear the seven-layered skirt and dry salted fish on wooden racks by the promenade. Take the lift up to the Sítio for the lighthouse at golden hour.</span><span class="pt">As mulheres da Nazaré ainda usam as sete saias e secam peixe salgado em estendais junto à marginal. Suba de ascensor ao Sítio e veja o farol à hora dourada.</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div><div class="cta-banner-overlay"></div>
+  <div class="container"><div class="cta-banner-content">
+    <p class="label"><span class="en">Ready to live it?</span><span class="pt">Pronto para o viver?</span></p>
+    <h2 class="display-2"><span class="en">Your Nazaré story<br>starts with a room.</span><span class="pt bl">A sua história na Nazaré<br>começa num quarto.</span></h2>
+    <div class="btn-group"><a href="suites/" class="btn btn-primary"><span class="en">See the rooms</span><span class="pt">Ver os quartos</span></a><a href="contacto/" class="btn btn-outline-white"><span class="en">Contact</span><span class="pt">Contacto</span></a></div>
+  </div></div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-foot" src="images/brand/wordmark-white.png" alt="HSTO Seafront Rooms"></a><p><span class="en">Seafront rooms and suites in Nazaré.</span><span class="pt">Seafront Rooms e suites na Nazaré.</span></p></div>
+      <div class="footer-col"><h5><span class="en">Rooms</span><span class="pt">Quartos</span></h5><a href="suites/"><span class="en">All rooms</span><span class="pt">Todos os quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a></div>
+      <div class="footer-col"><h5><span class="en">Explore</span><span class="pt">Explorar</span></h5><a href="experiencia/">Nazaré</a><a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a></div>
+      <div class="footer-col"><h5><span class="en">Contact</span><span class="pt">Contacto</span></h5><a href="https://wa.me/351927622647" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://maps.app.goo.gl/fssxMec2yd6R4byP6" target="_blank" rel="noopener">Av. da República 6, 2450-104 Nazaré</a></span>
+      <span>© <span class="copy-year">2026</span> HSTO Seafront Rooms. <span class="en">All rights reserved.</span><span class="pt">Todos os direitos reservados.</span></span>
+      <span><a href="../privacidade/">Privacidade</a> <em>·</em> <a href="../cookies/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-group">
+  <a href="https://wa.me/351927622647" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+<script src="js/main.js?v=10"></script>
+</body>
+</html>

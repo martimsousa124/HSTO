@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Villas — JM Villas Nazaré</title>
+  <meta name="description" content="Casa da Encosta (5 quartos, 10 hóspedes) e Alohouse Nazaré (2 quartos, 4 hóspedes). Compare e reserve diretamente.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+  <style>
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+    .compare-table th, .compare-table td { padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .compare-table th { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
+    .compare-table td:first-child { color: var(--text-light); }
+    .compare-table .check { color: var(--gold); font-size: 1rem; }
+    .compare-table .cross { color: var(--border); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .villa-head { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
+    @media(max-width:768px){
+      .villa-row { grid-template-columns: 1fr !important; }
+      .villa-row .img-col { order: 0 !important; }
+      .villa-row .text-col { order: 1 !important; }
+    }
+    .villa-img-pair {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 0.75rem;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .villa-img-pair img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .villa-img-pair img:first-child {
+      aspect-ratio: 4/3;
+    }
+    .villa-img-pair img:last-child {
+      aspect-ratio: 3/4;
+    }
+    @media (max-width: 600px) {
+      .villa-img-pair { grid-template-columns: 1fr; }
+      .villa-img-pair img:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="./" class="logo"><img src="images/logo.svg" alt="JM Arques — Gestão de Propriedades" class="logo-img"></a>
+      <nav class="nav">
+        <a href="villas/" class="active"><span class="en">Villas</span><span class="pt">Casas</span></a>
+        <a href="experiencia/">Nazaré</a>
+        <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <button data-lang-btn="en" class="active">EN</button>
+          <span>|</span>
+          <button data-lang-btn="pt">PT</button>
+        </div>
+        <a href="contacto/" class="btn-header"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="villas/"><span class="en">Villas</span><span class="pt">Casas</span></a>
+  <a href="experiencia/">Nazaré</a>
+  <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+  <div class="lang-switcher" style="margin-top:1rem;">
+    <button data-lang-btn="en">EN</button><span>|</span><button data-lang-btn="pt">PT</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="padding-top: var(--header-h);">
+  <div class="page-hero-bg" style="background-image:url('https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1920');background-image:url('https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1920'), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <p class="label"><span class="en">Our Properties</span><span class="pt">As Nossas Propriedades</span></p>
+      <h1 class="display-1"><span class="en">The Villas</span><span class="pt">As Casas</span></h1>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:5rem;">
+      <p class="label"><span class="en">Choose your stay</span><span class="pt">Escolha a sua estadia</span></p>
+      <h2 class="display-2">
+        <span class="en">Two properties,<br>one <em>unforgettable</em> coast.</span>
+        <span class="pt bl">Duas propriedades,<br>uma costa <em>inesquecível.</em></span>
+      </h2>
+      <p>
+        <span class="en">A spacious villa for groups of up to 10, or an intimate apartment for couples and small families. Both near Nazaré. Both exceptional.</span>
+        <span class="pt">Uma moradia espaçosa para grupos até 10 pessoas, ou um apartamento íntimo para casais e famílias pequenas, ambas perto de Nazaré.</span>
+      </p>
+    </div>
+
+    <!-- Villa 1: Casa da Encosta -->
+    <div class="villa-row" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; margin-bottom:8rem;">
+      <div class="img-col reveal">
+        <div class="villa-img-pair">
+          <img
+            src="https://a0.muscache.com/im/pictures/375755e1-f5c2-4fbf-b08f-67f189a7c2ba.jpg?im_w=1440"
+            alt="Casa da Encosta Piscina"
+          >
+          <img
+            src="https://a0.muscache.com/im/pictures/miso/Hosting-27696320/original/e01cfc69-e4f9-4248-a527-8254673712a7.jpeg?im_w=720"
+            alt="Casa da Encosta Quarto"
+            loading="lazy"
+          >
+        </div>
+      </div>
+      <div class="text-col reveal reveal-delay-1">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.25rem;">
+          <span style="background:var(--gold); color:white; font-size:0.62rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:0.25rem 0.7rem; border-radius:2px;">⭐ Guest Favourite</span>
+        </div>
+        <p class="label"><span class="en">★ 4.98</span><span class="pt">★ 4.98</span></p>
+        <h2 style="font-size:2.5rem; margin-bottom:1rem;">Casa da Encosta</h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;">
+          <span class="en">A generous 5-bedroom villa set between Nazaré, São Martinho do Porto and Salgado Beach. Private outdoor pool, a games annex with snooker and foosball, wine cellar, and daily breakfast prepared every morning.</span>
+          <span class="pt">Uma moradia generosa de 5 quartos, situada entre Nazaré, São Martinho do Porto e a Praia do Salgado. Piscina exterior privada, anexo com snooker e matraquilhos, adega e pequeno-almoço diário preparado todas as manhãs.</span>
+        </p>
+        <ul class="villa-features" style="margin-bottom:2rem;">
+          <li>5 <span class="en">Bedrooms · 4 Bathrooms</span><span class="pt">Quartos · 4 Casas de Banho</span></li>
+          <li>10 <span class="en">Guests max.</span><span class="pt">Hóspedes máx.</span></li>
+          <li><span class="en">Private outdoor pool</span><span class="pt">Piscina exterior privada</span></li>
+          <li><span class="en">Daily breakfast included</span><span class="pt">Pequeno-almoço incluído</span></li>
+          <li><span class="en">Games room (snooker + foosball)</span><span class="pt">Sala de jogos (snooker + matraquilhos)</span></li>
+          <li><span class="en">Wine cellar · Fireplace</span><span class="pt">Adega · Lareira</span></li>
+          <li><span class="en">Wi-Fi</span><span class="pt">Wi-Fi</span></li>
+          <li><span class="en">Free parking</span><span class="pt">Estacionamento grátis</span></li>
+
+          <li><span class="en">5km from Nazaré</span><span class="pt">5km de Nazaré</span></li>
+        </ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="villa-1/" class="btn btn-primary"><span class="en">View & Book</span><span class="pt">Ver e Reservar</span></a>
+          <a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Villa 2: Alohouse Nazaré -->
+    <div class="villa-row" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+      <div class="img-col reveal reveal-delay-1" style="order:2;">
+        <div class="villa-img-pair">
+          <img
+            src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/3295ef61-d54b-4a95-a730-ace9e6511892.jpeg?im_w=1440"
+            alt="Alohouse Nazaré com Interior"
+          >
+          <img
+            src="https://a0.muscache.com/im/pictures/miso/Hosting-873114183835748649/original/8755fb4a-0e4c-4e14-8b7b-9fa57d0822b0.jpeg?im_w=720"
+            alt="Alohouse Nazaré Piscina"
+            loading="lazy"
+          >
+        </div>
+      </div>
+      <div class="text-col reveal" style="order:1;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.25rem;">
+          <span style="background:var(--sand); color:var(--text); font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.7rem; border-radius:2px;">Pederneira, Nazaré</span>
+        </div>
+        <p class="label"><span class="en">★ 4.88</span><span class="pt">★ 4.88</span></p>
+        <h2 style="font-size:2.5rem; margin-bottom:1rem;">
+          <span class="en">Alohouse Nazaré</span>
+          <span class="pt bl">Alohouse Nazaré</span>
+        </h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;">
+          <span class="en">A beautiful, modern apartment in Pederneira. Two bedrooms, two private bathrooms, pool, air conditioning and free private garage.</span>
+          <span class="pt">Um apartamento moderno e bonito na Pederneira. Dois quartos, duas casas de banho privativas, piscina, ar condicionado e garagem privada grátis.</span>
+        </p>
+        <ul class="villa-features" style="margin-bottom:2rem;">
+          <li>2 <span class="en">Bedrooms · 2 Bathrooms</span><span class="pt">Quartos · 2 Casas de Banho</span></li>
+          <li>4 <span class="en">Guests max.</span><span class="pt">Hóspedes máx.</span></li>
+          <li><span class="en">Pool</span><span class="pt">Piscina</span></li>
+          <li><span class="en">Air conditioning</span><span class="pt">Ar condicionado</span></li>
+          <li><span class="en">Free private garage</span><span class="pt">Garagem privada grátis</span></li>
+          <li><span class="en">Wi-Fi</span><span class="pt">Wi-Fi</span></li>
+          <li><span class="en">Washing machine</span><span class="pt">Máquina de lavar</span></li>
+        </ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="villa-2/" class="btn btn-primary"><span class="en">View & Book</span><span class="pt">Ver e Reservar</span></a>
+          <a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="section-sm" style="background:var(--sand);">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:1rem;">
+      <p class="label"><span class="en">Side by side</span><span class="pt">Lado a lado</span></p>
+      <h2 class="display-3"><span class="en">Compare the properties</span><span class="pt">Comparar as casas</span></h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th><span class="villa-head">Casa da Encosta</span><br><span style="font-size:0.75rem; color:var(--gold); font-weight:400;">★ 4.98</span></th>
+            <th><span class="villa-head">Alohouse Nazaré</span><br><span style="font-size:0.75rem; color:var(--gold); font-weight:400;">★ 4.88</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="en">Bedrooms</span><span class="pt">Quartos</span></td>
+            <td>5</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td><span class="en">Max. guests</span><span class="pt">Máx. hóspedes</span></td>
+            <td>10</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><span class="en">Bathrooms</span><span class="pt">Casas de banho</span></td>
+            <td>4</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td><span class="en">Pool</span><span class="pt">Piscina</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg> <span class="en">Private outdoor</span><span class="pt">Exterior privada</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+          </tr>
+          <tr>
+            <td><span class="en">Breakfast</span><span class="pt">Pequeno-almoço</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg> <span class="en">Daily, included</span><span class="pt">Diário, incluído</span></td>
+            <td><span class="cross">—</span></td>
+          </tr>
+          <tr>
+            <td><span class="en">Games room</span><span class="pt">Sala de jogos</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg> Snooker + <span class="en">foosball</span><span class="pt">matraquilhos</span></td>
+            <td><span class="cross">—</span></td>
+          </tr>
+          <tr>
+            <td><span class="en">Wine cellar</span><span class="pt">Adega</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><span class="cross">—</span></td>
+          </tr>
+          <tr>
+            <td><span class="en">Fireplace</span><span class="pt">Lareira</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><span class="cross">—</span></td>
+          </tr>
+          <tr>
+            <td><span class="en">Air conditioning</span><span class="pt">Ar condicionado</span></td>
+            <td><span class="cross">—</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+          </tr>
+          <tr>
+            <td><span class="en">Parking</span><span class="pt">Estacionamento</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg> <span class="en">Free, on-site</span><span class="pt">Grátis, no local</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg> <span class="en">Free private garage</span><span class="pt">Garagem grátis</span></td>
+          </tr>
+          <tr>
+            <td><span class="en">Wi-Fi</span><span class="pt">Wi-Fi</span></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+            <td><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);stroke-width:2.5;"><path d="M20 6L9 17l-5-5"/></svg></td>
+          </tr>
+          <tr>
+            <td>Check-in</td>
+            <td>16:00</td>
+            <td>15:00</td>
+          </tr>
+          <tr>
+            <td>Check-out</td>
+            <td>10:00</td>
+            <td>11:00</td>
+          </tr>
+          <tr>
+            <td><span class="en">Best for</span><span class="pt">Ideal para</span></td>
+            <td><span class="en">Large groups, families</span><span class="pt">Grupos grandes, famílias</span></td>
+            <td><span class="en">Couples, small families</span><span class="pt">Casais, famílias pequenas</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="container">
+    <div class="cta-banner-content">
+      <h2 class="display-2">
+        <span class="en">Still not sure?<br>We'll help you choose.</span>
+        <span class="pt bl">Pronto para Reservar?</span>
+      </h2>
+      <p>
+        <span class="en">Send us a message on WhatsApp — we'll match you with the perfect property in minutes.</span>
+        <span class="pt">Envie-nos uma mensagem pelo WhatsApp se tiver alguma dúvida.</span>
+      </p>
+      <div class="btn-group">
+        <a href="https://wa.me/351927622647?text=Olá%2C%20precisava%20de%20ajuda%20a%20escolher%20entre%20as%20vossas%20casas" target="_blank" rel="noopener" class="btn btn-primary">
+          <span class="en">Book Now</span><span class="pt">Reservar Agora</span>
+        </a>
+        <a href="https://wa.me/351927622647?text=Olá%2C%20precisava%20de%20ajuda%20a%20escolher%20entre%20as%20vossas%20casas" target="_blank" rel="noopener" class="btn btn-primary">
+          <span class="en">Send a message</span><span class="pt">Enviar mensagem</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./" class="logo"><img src="images/logo.svg" alt="JM Arques — Gestão de Propriedades" class="logo-img"></a>
+        <p><span class="en">Two exceptional private properties near Nazaré, Portugal.</span><span class="pt">Duas propriedades privadas de excepção perto de Nazaré, Portugal.</span></p>
+      </div>
+      <div class="footer-col">
+        <h5><span class="en">Properties</span><span class="pt">Propriedades</span></h5>
+        <a href="villa-1/">Casa da Encosta</a>
+        <a href="villa-2/">Alohouse Nazaré</a>
+      </div>
+      <div class="footer-col">
+        <h5><span class="en">Explore</span><span class="pt">Explorar</span></h5>
+        <a href="experiencia/">Nazaré</a>
+        <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="https://wa.me/351927622647" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://maps.app.goo.gl/fssxMec2yd6R4byP6" target="_blank" rel="noopener">Av. da República 6, 2450-104 Nazaré</a></span>
+      <span>© <span class="copy-year">2026</span> HSTO Seafront Rooms. <span class="en">All rights reserved.</span><span class="pt">Todos os direitos reservados.</span></span>
+      <span><a href="../privacidade/">Privacidade</a> <em>·</em> <a href="../cookies/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-group">
+  <a href="https://wa.me/351927622647" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
