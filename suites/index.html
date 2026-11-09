@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSTO Seafront Rooms</title>
+  <meta name="description" content="2 suites e 7 quartos à beira-mar na Nazaré. Compare e reserve diretamente.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css?v=42">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+  <style>
+    .compare-table { width:100%; border-collapse:collapse; margin-top:3rem; }
+    .compare-table th,.compare-table td { padding:.9rem 1.25rem; text-align:left; border-bottom:1px solid var(--border);  }
+    .compare-table th { font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
+    .compare-table td:first-child { font-family:var(--serif); font-weight:700; }
+    .compare-table tr:last-child td { border-bottom:none; }
+    .villa-row { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; margin-bottom:7rem; scroll-margin-top:100px; }
+    .villa-row .img-col img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:6px; }
+    .villa-row.flip .img-col { order:2; }
+    #moreRooms[hidden] { display:none; }
+    @media(max-width:768px){ .villa-row { grid-template-columns:1fr; gap:2rem; margin-bottom:4rem; } .villa-row.flip .img-col { order:0; } }
+  </style>
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-d" src="images/brand/symbol-dark.png" alt="HSTO"><img class="logo-w" src="images/brand/symbol-white.png" alt=""></a>
+      <nav class="nav">
+        <a href="suites/" class="active"><span class="en">Rooms</span><span class="pt">Quartos</span></a>
+        <a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a>
+        <a href="experiencia/">Nazaré</a>
+        <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher"><button data-lang-btn="en" class="active">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+        <a href="contacto/" class="btn-header"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a><a href="experiencia/">Nazaré</a>
+  <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+  <div class="lang-switcher" style="margin-top:1rem;"><button data-lang-btn="en">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+  <a href="suites/" class="btn btn-primary mobile-book"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+</nav>
+
+<div class="page-hero" style="padding-top: var(--header-h);">
+  <div class="page-hero-bg fx-img" data-fx style="--fx-src:url('../images/bg-suites.jpg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container"><div class="page-hero-content">
+    <p class="label"><span class="en">HSTO Seafront Rooms</span><span class="pt">HSTO Seafront Rooms</span></p>
+    <h1 class="display-1"><span class="en">Suites &amp; Rooms</span><span class="pt">Suites e Quartos</span></h1>
+  </div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:5rem;">
+      <p class="label"><span class="en">Choose your stay</span><span class="pt">Escolha a sua estadia</span></p>
+      <h2 class="display-2"><span class="en">Two suites, seven rooms,<br>one <em>unforgettable</em> coast.</span><span class="pt">2 suites e 7 quartos,<br>uma costa <em>inesquecível.</em></span></h2>
+      <p><span class="en">Four highlights below. All rooms have a private bathroom and Wi-Fi.</span><span class="pt">Quatro destaques abaixo. Todos os quartos têm casa de banho privativa e Wi-Fi.</span></p>
+    </div>
+
+    <!-- Farol -->
+    <div class="villa-row" id="farol">
+      <div class="img-col reveal"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=80" alt="Suite Farol" loading="lazy"></div>
+      <div class="text-col reveal reveal-delay-1">
+        <span class="tag-gold" style="margin-bottom:1rem;"><span class="en">Best for sea views</span><span class="pt">O melhor para vista mar</span></span>
+        <h2 style="margin-bottom:1rem;">Suite Farol</h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;"><span class="en">Sea view from the bed, with a private balcony.</span><span class="pt">Vista mar a partir da cama, com varanda privada.</span></p>
+        <ul class="villa-features" style="margin-bottom:2rem;"><li><span class="en">2 guests</span><span class="pt">2 hóspedes</span></li><li><span class="en">King bed</span><span class="pt">Cama king</span></li><li><span class="en">Sea view &amp; balcony</span><span class="pt">Vista mar e varanda</span></li></ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;"><a href="contacto/" class="btn btn-primary"><span class="en">Book this room</span><span class="pt">Reservar</span></a><a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a></div>
+      </div>
+    </div>
+
+    <!-- Sete Saias -->
+    <div class="villa-row flip" id="sete-saias">
+      <div class="img-col reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="Quarto Sete Saias" loading="lazy"></div>
+      <div class="text-col reveal">
+        <span class="tag-gold" style="margin-bottom:1rem;"><span class="en">Best for couples</span><span class="pt">O melhor para casais</span></span>
+        <h2 style="margin-bottom:1rem;">Quarto Sete Saias</h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;"><span class="en">Sand tones and natural fabrics.</span><span class="pt">Tons de areia e tecidos naturais.</span></p>
+        <ul class="villa-features" style="margin-bottom:2rem;"><li><span class="en">2 guests</span><span class="pt">2 hóspedes</span></li><li><span class="en">Double bed</span><span class="pt">Cama de casal</span></li><li><span class="en">Courtyard</span><span class="pt">Pátio</span></li></ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;"><a href="contacto/" class="btn btn-primary"><span class="en">Book this room</span><span class="pt">Reservar</span></a><a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a></div>
+      </div>
+    </div>
+
+    <!-- Canhão -->
+    <div class="villa-row" id="canhao">
+      <div class="img-col reveal"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&q=80" alt="Suite Canhão" loading="lazy"></div>
+      <div class="text-col reveal reveal-delay-1">
+        <span class="tag-gold" style="margin-bottom:1rem;"><span class="en">Best for the waves</span><span class="pt">O melhor para as ondas</span></span>
+        <h2 style="margin-bottom:1rem;">Suite Canhão</h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;"><span class="en">A wide window facing the ocean.</span><span class="pt">Janela larga voltada ao oceano.</span></p>
+        <ul class="villa-features" style="margin-bottom:2rem;"><li><span class="en">2 guests</span><span class="pt">2 hóspedes</span></li><li><span class="en">Double bed</span><span class="pt">Cama de casal</span></li><li><span class="en">Sea view</span><span class="pt">Vista mar</span></li></ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;"><a href="contacto/" class="btn btn-primary"><span class="en">Book this room</span><span class="pt">Reservar</span></a><a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a></div>
+      </div>
+    </div>
+
+    <!-- Salgado -->
+    <div class="villa-row flip" id="salgado" style="margin-bottom:4rem;">
+      <div class="img-col reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80" alt="Quarto Salgado" loading="lazy"></div>
+      <div class="text-col reveal">
+        <span class="tag-gold" style="margin-bottom:1rem;"><span class="en">Best for families</span><span class="pt">O melhor para famílias</span></span>
+        <h2 style="margin-bottom:1rem;">Quarto Salgado</h2>
+        <p class="body-lg" style="color:var(--text-light); margin-bottom:2rem;"><span class="en">Spacious, with room for four.</span><span class="pt">Espaçoso, com lugar para quatro.</span></p>
+        <ul class="villa-features" style="margin-bottom:2rem;"><li><span class="en">4 guests</span><span class="pt">4 hóspedes</span></li><li><span class="en">Two beds</span><span class="pt">Duas camas</span></li><li><span class="en">Morning light</span><span class="pt">Luz da manhã</span></li></ul>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;"><a href="contacto/" class="btn btn-primary"><span class="en">Book this room</span><span class="pt">Reservar</span></a><a href="contacto/" class="btn btn-outline"><span class="en">Ask a question</span><span class="pt">Fazer pergunta</span></a></div>
+      </div>
+    </div>
+
+    <!-- Ver restantes -->
+    <div style="text-align:center;" id="restantes">
+      <button class="btn btn-outline" id="toggleMore" aria-expanded="false" aria-controls="moreRooms"><span id="toggleTxt"></span></button>
+    </div>
+    <div id="moreRooms" hidden style="margin-top:4rem;">
+      <div class="villas-grid" id="roomGrid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); max-width:none;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="section-sm" style="background:var(--sand);">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:1rem;">
+      <p class="label"><span class="en">Side by side</span><span class="pt">Lado a lado</span></p>
+      <h2 class="display-3"><span class="en">Compare the rooms</span><span class="pt">Comparar os quartos</span></h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead><tr><th><span class="en">Room</span><span class="pt">Quarto</span></th><th><span class="en">Type</span><span class="pt">Tipo</span></th><th><span class="en">Guests</span><span class="pt">Hóspedes</span></th><th><span class="en">Best for</span><span class="pt">Ideal para</span></th></tr></thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div><div class="cta-banner-overlay"></div>
+  <div class="container"><div class="cta-banner-content">
+    <h2 class="display-2"><span class="en">Still not sure?<br>We'll help you choose.</span><span class="pt">Ainda com dúvidas?<br>Ajudamos a escolher.</span></h2>
+    <p><span class="en">Send us a message and we match you with the right room.</span><span class="pt">Envie-nos uma mensagem e indicamos o quarto certo.</span></p>
+    <div class="btn-group"><a href="https://wa.me/351927622647" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp</a><a href="contacto/" class="btn btn-outline-white"><span class="en">Send a message</span><span class="pt">Enviar mensagem</span></a></div>
+  </div></div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-foot" src="images/brand/wordmark-white.png" alt="HSTO Seafront Rooms"></a><p><span class="en">Seafront rooms and suites in Nazaré.</span><span class="pt">Seafront Rooms e suites na Nazaré.</span></p></div>
+      <div class="footer-col"><h5><span class="en">Rooms</span><span class="pt">Quartos</span></h5><a href="suites/"><span class="en">All rooms</span><span class="pt">Todos os quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a></div>
+      <div class="footer-col"><h5><span class="en">Explore</span><span class="pt">Explorar</span></h5><a href="experiencia/">Nazaré</a><a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a></div>
+      <div class="footer-col"><h5><span class="en">Contact</span><span class="pt">Contacto</span></h5><a href="https://wa.me/351927622647" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://maps.app.goo.gl/fssxMec2yd6R4byP6" target="_blank" rel="noopener">Av. da República 6, 2450-104 Nazaré</a></span>
+      <span>© <span class="copy-year">2026</span> HSTO Seafront Rooms. <span class="en">All rights reserved.</span><span class="pt">Todos os direitos reservados.</span></span>
+      <span><a href="../privacidade/">Privacidade</a> <em>·</em> <a href="../cookies/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-group">
+  <a href="https://wa.me/351927622647" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+<script src="js/main.js?v=10"></script>
+<script>
+(function(){
+  var B=['Cama de casal|Double bed','Cama king|King bed','Duas camas|Two beds','Cama de casal + sofá-cama|Double bed + sofa bed'];
+  // nome, (n/a), hóspedes, cama, ideal para (PT|EN), descrição (PT|EN)
+  var more=[
+    ['Pederneira','Quarto',2,0,'Sossego, estadias longas|Quiet, long stays','Silencioso e acolhedor, ideal para ficar mais tempo.|Quiet and cosy, ideal for a longer stay.'],
+    ['Percebes','Quarto',2,0,'Trabalho remoto|Remote work','Com secretária e muita luz natural.|With a desk and plenty of natural light.'],
+    ['Maré','Quarto',4,2,'Amigos, famílias|Friends, families','Espaçoso, com zona de estar.|Spacious, with a sitting area.'],
+    ['Sítio','Quarto',2,0,'Escapadinhas|Short getaways','Tranquilo e confortável.|Calm and comfortable.'],
+    ['Areia','Quarto',2,0,'Amantes da praia|Beach lovers','Perto da areia, com tons quentes.|Close to the sand, in warm tones.']
+  ];
+  var feat=[['Suite Farol','Suite',2,'Vista mar|Sea view'],['Sete Saias','Quarto',2,'Casais|Couples'],['Suite Canhão','Suite',2,'Época de ondas|Wave season'],['Salgado','Quarto',4,'Famílias|Families']];
+  var imgs=['1600585154340-be6161a56a0c','1580587771525-78b9dba3b914','1578683010236-d716f9a3f461','1556909114-f6e7ad7d3136','1523217582562-09d0def993a6','1512917774080-9991f1c4c750'];
+  function bi(s){var p=s.split('|');return '<span class="pt">'+p[0]+'</span><span class="en">'+p[1]+'</span>'}
+  var grid=document.getElementById('roomGrid'),rows=document.getElementById('compareBody'),html='',tr='';
+  feat.forEach(function(f){tr+='<tr><td>'+f[0]+'</td><td>'+f[1]+'</td><td>'+f[2]+'</td><td>'+bi(f[3])+'</td></tr>'});
+  more.forEach(function(r,i){
+    var n=r[0],bed=B[r[3]];
+    html+='<div class="villa-card"><div class="villa-card-img"><img src="https://images.unsplash.com/photo-'+imgs[i%imgs.length]+'?w=800&q=80" alt="'+n+'" loading="lazy"><div class="villa-card-tag"><span class="pt">Quarto</span><span class="en">Room</span></div></div><div class="villa-card-body"><h3>Quarto '+n+'</h3><p>'+bi(r[5])+'</p><ul class="villa-features"><li>'+r[2]+' <span class="pt">Hóspedes</span><span class="en">Guests</span></li><li>'+bi(bed)+'</li><li>Wi-Fi</li></ul><a href="contacto/" class="btn btn-outline"><span class="pt">Pedir disponibilidade</span><span class="en">Ask availability</span></a></div></div>';
+    tr+='<tr><td>'+n+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+bi(r[4])+'</td></tr>';
+  });
+  grid.innerHTML=html;rows.innerHTML=tr;
+  var b=document.getElementById('toggleMore'),m=document.getElementById('moreRooms'),t=document.getElementById('toggleTxt');
+  function pt(){return document.body.classList.contains('is-pt')}
+  function label(){var o=!m.hidden;t.textContent=pt()?(o?'Mostrar menos':'Ver os restantes quartos'):(o?'Show fewer':'See the remaining rooms')}
+  b.addEventListener('click',function(){m.hidden=!m.hidden;b.setAttribute('aria-expanded',!m.hidden);label()});
+  document.querySelectorAll('[data-lang-btn]').forEach(function(x){x.addEventListener('click',function(){setTimeout(label,0)})});
+  if(location.hash==='#restantes'){m.hidden=false;b.setAttribute('aria-expanded','true')}
+  document.addEventListener('DOMContentLoaded',label);label();
+})();
+</script>
+</body>
+</html>

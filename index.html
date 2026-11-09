@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSTO Seafront Rooms</title>
+  <meta name="description" content="2 suites e 7 quartos à beira da praia, na Nazaré. Reserve diretamente.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css?v=63">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-d" src="images/brand/symbol-dark.png" alt="HSTO"><img class="logo-w" src="images/brand/symbol-white.png" alt=""></a>
+      <nav class="nav">
+        <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a>
+        <a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a>
+        <a href="experiencia/">Nazaré</a>
+        <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher">
+          <button data-lang-btn="en" class="active">EN</button><span>|</span><button data-lang-btn="pt">PT</button>
+        </div>
+        <a href="suites/" class="btn-header"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a>
+  <a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a>
+  <a href="experiencia/">Nazaré</a>
+  <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+  <div class="lang-switcher" style="margin-top:1rem;">
+    <button data-lang-btn="en">EN</button><span>|</span><button data-lang-btn="pt">PT</button>
+  </div>
+  <a href="suites/" class="btn btn-primary mobile-book"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="h-hero">
+  <div class="container">
+    <div class="h-hero-text">
+      <p class="label"><span class="en">Nazaré · Seafront</span><span class="pt">Nazaré · Seafront</span></p>
+      <h1 class="display-1"><span class="en">Wake up with the <em>Atlantic</em> at your door.</span><span class="pt">Acorde com o <em>Atlântico</em> à sua porta.</span></h1>
+      <p class="lead"><span class="en">2 suites and 7 rooms right on the sand, on the Nazaré seafront.</span><span class="pt">2 suites e 7 quartos mesmo na areia, na frente do mar da Nazaré.</span></p>
+      <div class="h-actions">
+        <a href="suites/" class="btn-round"><span class="en">See the rooms</span><span class="pt">Ver os quartos</span></a>
+        <a href="contacto/" class="btn-round line"><span class="en">Check dates</span><span class="pt">Verificar datas</span></a>
+      </div>
+    </div>
+    <div class="h-hero-main"><img src="images/encosta.png" alt="HSTO Seafront Rooms"></div>
+    <form class="h-avail" id="availForm" action="contacto/" method="get" novalidate>
+      <div class="h-avail-field"><label for="hRoom"><span class="en">Suite or room</span><span class="pt">Suite ou quarto</span></label>
+        <select id="hRoom" name="suite" required><option value="">—</option><option data-max="2">Suite Farol</option><option data-max="2">Suite Canhão</option><option data-max="2">Quarto Sete Saias</option><option data-max="4">Quarto Salgado</option><option data-max="2">Quarto Pederneira</option><option data-max="2">Quarto Percebes</option><option data-max="4">Quarto Maré</option><option data-max="2">Quarto Sítio</option><option data-max="2">Quarto Areia</option></select></div>
+      <div class="h-avail-field"><label for="hIn"><span class="en">Check-in</span><span class="pt">Entrada</span></label><input id="hIn" name="in" type="date" required></div>
+      <div class="h-avail-field"><label for="hOut"><span class="en">Check-out</span><span class="pt">Saída</span></label><input id="hOut" name="out" type="date" required></div>
+      <div class="h-avail-field"><label for="hPax"><span class="en">Guests</span><span class="pt">Hóspedes</span></label><select id="hPax" name="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+      <button type="submit" class="btn-round"><span class="en">Check availability</span><span class="pt">Verificar disponibilidade</span></button>
+      <p class="h-avail-error" id="availError" role="alert" hidden></p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){
+  // Ainda não há sistema de disponibilidade: o pedido segue para contacto/ (pedido de reserva por email) com os dados escolhidos.
+  var CFG={CHECKIN_LAST_HOUR:20,NIGHTS:2};
+  var f=document.getElementById('availForm'),r=document.getElementById('hRoom'),i=document.getElementById('hIn'),o=document.getElementById('hOut'),g=document.getElementById('hPax'),err=document.getElementById('availError');
+  function p(n){return String(n).padStart(2,'0')}
+  function iso(d){return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())}
+  function add(v,n){var d=new Date(v+'T00:00:00');d.setDate(d.getDate()+n);return iso(d)}
+  function ok(v){return /^\d{4}-\d{2}-\d{2}$/.test(v)}
+  var n=new Date(),first=iso(new Date(n.getFullYear(),n.getMonth(),n.getDate()+(n.getHours()>=CFG.CHECKIN_LAST_HOUR?1:0))),stay=CFG.NIGHTS;
+  function show(a,b){err.innerHTML='<span class="pt">'+a+'</span><span class="en">'+b+'</span>';err.hidden=false}
+  function mark(el,bad){el.parentNode.classList.toggle('is-invalid',!!bad)}
+  function sync(){o.min=add(ok(i.value)&&i.value>=first?i.value:first,1)}
+  function maxG(){var op=r.options[r.selectedIndex];return parseInt(op&&op.getAttribute('data-max'),10)||4}
+  function limit(){var m=maxG();for(var k=0;k<g.options.length;k++)g.options[k].disabled=+g.options[k].value>m;if(+g.value>m){g.value=m;show('Este alojamento aceita no máximo '+m+' hóspedes. Ajustámos o número.','This accommodation sleeps up to '+m+' guests. We adjusted the number.')}}
+  i.min=first;i.value=first;o.value=add(first,stay);sync();
+  r.addEventListener('change',function(){err.hidden=true;mark(r,0);limit()});
+  i.addEventListener('change',function(){
+    err.hidden=true;mark(i,0);mark(o,0);
+    if(ok(i.value)&&i.value<first)i.value=first;
+    sync();
+    if(ok(i.value)&&(!ok(o.value)||o.value<=i.value))o.value=add(i.value,stay);
+    else if(ok(i.value)&&ok(o.value))stay=Math.round((new Date(o.value)-new Date(i.value))/864e5);
+  });
+  o.addEventListener('change',function(){err.hidden=true;mark(o,0);if(ok(i.value)&&ok(o.value)&&o.value>i.value)stay=Math.round((new Date(o.value)-new Date(i.value))/864e5)});
+  f.addEventListener('submit',function(e){
+    var msg=null,el=null;
+    if(!r.value){msg=['Escolha a suite ou o quarto.','Please choose a suite or room.'];el=r}
+    else if(!ok(i.value)||!ok(o.value)){msg=['Indique as datas de entrada e de saída.','Please enter your check-in and check-out dates.'];el=ok(i.value)?o:i}
+    else if(i.value<first){msg=['A entrada não pode ser anterior à primeira data disponível.','Check-in cannot be before the first available date.'];el=i}
+    else if(o.value<=i.value){msg=['A saída tem de ser depois da entrada.','Check-out must be after check-in.'];el=o}
+    else if(+g.value>maxG()){msg=['Este alojamento aceita no máximo '+maxG()+' hóspedes.','This accommodation sleeps up to '+maxG()+' guests.'];el=g}
+    mark(r,el===r);mark(i,el===i);mark(o,el===o||el===i&&ok(i.value));
+    if(msg){e.preventDefault();show(msg[0],msg[1]);el.focus()}
+  });
+})();
+</script>
+
+
+<!-- O ALOJAMENTO -->
+<section class="h-intro">
+  <div class="container">
+    <div class="h-intro-grid">
+      <div class="h-offset reveal"><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=900&q=80" alt="Quarto com vista mar" loading="lazy"></div>
+      <div class="reveal reveal-delay-1">
+        <p class="label"><span class="en">The Stay</span><span class="pt">O Alojamento</span></p>
+        <h2 class="display-2"><span class="en">Two suites, seven rooms. One standard, <em>exceptional.</em></span><span class="pt">2 suites e 7 quartos. Um só padrão, <em>excecional.</em></span></h2>
+        <p><span class="en">Two suites and seven rooms with sand tones, natural fabrics and the sound of the sea. Simple, warm, and a few steps from the beach.</span><span class="pt">2 suites e 7 quartos com tons de areia, tecidos naturais e o som do mar. Simples, acolhedor e a poucos passos da praia.</span></p>
+        <div class="h-actions">
+          <a href="suites/" class="btn-round"><span class="en">View rooms</span><span class="pt">Ver quartos</span></a>
+          <a href="contacto/" class="btn-round line"><span class="en">Contact us</span><span class="pt">Falar connosco</span></a>
+        </div>
+      </div>
+      <div class="h-wide reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1662474382995-fa2ad7b61f15?w=1400&q=80" alt="Praia da Nazaré" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="h-band" id="localizacao">
+  <div class="container">
+    <div class="h-band-grid reveal">
+      <div class="h-band-img"><img src="https://images.unsplash.com/photo-1574648576533-a2b4ad49eb94?w=1000&q=80" alt="Nazaré" loading="lazy"></div>
+      <div class="h-band-panel">
+        <p class="label"><span class="en">Location</span><span class="pt">Localização</span></p>
+        <h2 class="display-2"><span class="en">On the sand's edge, in the heart of <em>Nazaré.</em></span><span class="pt">À beira da areia, no coração da <em>Nazaré.</em></span></h2>
+        <p><span class="en">We are on the seafront. Open the door and the beach, the promenade and the best tables in town are a few steps away.</span><span class="pt">Estamos na frente do mar. Abra a porta e tem a praia, a marginal e as melhores mesas da vila a poucos passos.</span></p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=39.602417,-9.074194" target="_blank" rel="noopener" class="btn-round light"><span class="en">Get directions</span><span class="pt">Como chegar</span></a>
+      </div>
+    </div>
+    <div class="h-map reveal" id="hMap">
+      <iframe title="HSTO Seafront Rooms — Nazaré" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d450!2d-9.075406560992288!3d39.60240525950245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18a9b570097c4d%3A0x28f5b77759eb8bd!2sSem%20Vergonha!5e1!3m2!1spt-PT!2spt!4v1792705557520!5m2!1spt-PT!2spt" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div id="hMapHsto" class="h-map-hsto" role="region" aria-label="Mapa 3D interativo — HSTO Seafront Rooms" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESCOBRIR -->
+<section class="h-cards-sec">
+  <div class="container">
+    <div class="h-cards-title reveal"><h2><span class="en">Rooms &amp; Nazaré</span><span class="pt">Quartos e Nazaré</span></h2></div>
+    <div class="h-cards">
+      <div class="h-card reveal"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=800&q=80" alt="Quartos" loading="lazy"><h3><span class="en">The Rooms</span><span class="pt">Os Quartos</span></h3><p><span class="en">Sea-view rooms, ready to book directly.</span><span class="pt">Quartos com vista mar, para reservar diretamente.</span></p><a href="suites/"><span class="en">See rooms</span><span class="pt">Ver quartos</span></a></div>
+      <div class="h-card reveal reveal-delay-1"><img src="images/img_ondaspraiadonorte.jpg" alt="Ondas da Praia do Norte, Nazaré" loading="lazy"><h3><span class="en">The Waves</span><span class="pt">As Ondas</span></h3><p><span class="en">Every winter the Atlantic puts on a world-class show.</span><span class="pt">Todos os invernos o Atlântico dá um espetáculo de classe mundial.</span></p><a href="experiencia/"><span class="en">Explore Nazaré</span><span class="pt">Explorar Nazaré</span></a></div>
+      <div class="h-card reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Gastronomia" loading="lazy"><h3><span class="en">Gastronomy</span><span class="pt">Gastronomia</span></h3><p><span class="en">Sem Vergonha downstairs, and the best seafood a short walk away.</span><span class="pt">O Sem Vergonha no rés-do-chão e o melhor marisco a poucos passos.</span></p><a href="contacto/"><span class="en">Ask us</span><span class="pt">Pergunte-nos</span></a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-foot" src="images/brand/wordmark-white.png" alt="HSTO Seafront Rooms"></a>
+        <p><span class="en">Seafront rooms and suites in Nazaré.</span><span class="pt">Seafront Rooms e suites na Nazaré.</span></p>
+      </div>
+      <div class="footer-col"><h5><span class="en">Rooms</span><span class="pt">Quartos</span></h5><a href="suites/"><span class="en">All rooms</span><span class="pt">Todos os quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a></div>
+      <div class="footer-col"><h5><span class="en">Explore</span><span class="pt">Explorar</span></h5><a href="experiencia/">Nazaré</a><a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a></div>
+      <div class="footer-col"><h5><span class="en">Contact</span><span class="pt">Contacto</span></h5><a href="https://wa.me/351927622647" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://maps.app.goo.gl/fssxMec2yd6R4byP6" target="_blank" rel="noopener">Av. da República 6, 2450-104 Nazaré</a></span>
+      <span>© <span class="copy-year">2026</span> HSTO Seafront Rooms. <span class="en">All rights reserved.</span><span class="pt">Todos os direitos reservados.</span></span>
+      <span><a href="privacidade/">Privacidade</a> <em>·</em> <a href="cookies/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-group">
+  <a href="https://wa.me/351927622647" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+<script src="js/map-config.js?v=1"></script>
+<script src="js/map-hsto.js?v=1" defer></script>
+<script src="js/main.js?v=8"></script>
+</body>
+</html>

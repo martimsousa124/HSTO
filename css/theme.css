@@ -1,0 +1,389 @@
+/* ==========================================================================
+   HSTO Seafront Rooms — identidade visual (único sítio para alterar cores,
+   tipos de letra, tamanhos e botões)
+
+   Paleta (5 cores): Ivory #F2EBDD · Sage #78947F · Emerald #185844
+                     Forest #102F27 · Antique Gold #B08A4F
+   Verde escuro (identidade, rodapé, fundos): Forest. Verde mais claro (#284139): só botões.
+   Texto recuperado das versões anteriores: #111A19.
+   Tipos de letra:   --font-display (Playfair Display) para títulos e destaques
+                     --font-body (igual a --font-display: Playfair em todo o site)
+   Tamanhos:         --fs-title, --fs-text e --fs-small (três)
+   Botões:           .btn-primary (verde, detalhe dourado) · .btn-secondary (transparente)
+   ========================================================================== */
+:root {
+  --ivory:     #F2EBDD;
+  --sage:    #78947F;
+  --emerald: #185844;
+  --forest:  #102F27;
+  --gold-hsto: #B08A4F;
+
+  --ink:       #111A19;   /* texto (versão anterior) */
+  --footer-bg: var(--forest);  /* rodapé: verde escuro */
+  --btn-green: #284139;        /* verde mais claro, só para botões */
+
+  --sand:   color-mix(in srgb, var(--sage) 16%, var(--ivory));
+  --pale:   color-mix(in srgb, var(--sage) 28%, var(--ivory));
+  --border: color-mix(in srgb, var(--sage) 38%, var(--ivory));
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: var(--font-display);
+  --serif: var(--font-body);
+  --sans: var(--font-display);
+
+  --fs-title: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+  --fs-text: 1rem;
+  --fs-small: .875rem;   /* header, rodapé, menus, etiquetas, botões */
+
+  --bg: var(--ivory);
+  --surface: var(--ivory);
+  --text: var(--ink);
+  --text-light: color-mix(in srgb, var(--ink) 70%, var(--ivory));
+  --dark: var(--forest);
+  --white: var(--ivory);
+  --gold: var(--emerald);
+  --gold-light: var(--gold-hsto);
+  --font-color-default: var(--ink);
+  --font-color-headlines: var(--ink);
+  --font-color-black: var(--ink);
+  --font-color-input: var(--ink);
+  --font-color-label: var(--text-light);
+  --font-color-input-icons: var(--text-light);
+  --font-color-icons: var(--emerald);
+  --border-color-default: var(--border);
+  --border-color-container: var(--border);
+  --border-color-input: var(--border);
+  --border-color-image: var(--border);
+  --button-color-primary: var(--btn-green);
+  --button-color-secondary: var(--gold-hsto);
+  --header-h: 96px;
+}
+
+/* ---------- Tipografia ---------- */
+body { background: var(--ivory); color: var(--ink); font-family: var(--font-body); font-size: var(--fs-text); line-height: 1.7; }
+/* três tamanhos: tudo herda; títulos = --fs-title; header/rodapé/secundários = --fs-small */
+body * { font-size: inherit !important; }
+body :is(h1, h2, h3, .display-1, .display-2, .display-3) { font-size: var(--fs-title) !important; font-family: var(--font-display); font-weight: 700; line-height: 1.2; color: var(--ink); }
+body :is(#header, .footer, .nav a, .lang-switcher, .btn, .btn-header, .btn-round, h4, h5, h6, label, .label, .label2, .section-label, .tag-gold, .villa-card-tag, th, .compare-table, .h-card a, .mobile-menu .mobile-book) { font-size: var(--fs-small) !important; }
+body .mobile-menu a:not(.mobile-book) { font-size: var(--fs-text) !important; }
+body :is(h3) em, body :is(h1, h2) em { font-style: normal; color: var(--gold-hsto); }
+/* texto corrido e elementos funcionais: mesma família dos títulos */
+body :is(p, li, label, input, select, textarea, button, th, td, .nav a, .mobile-menu a, .lang-switcher, .btn, .btn-header, .btn-round, .label, .label2, .section-label, .tag-gold, .villa-card-tag, .footer-col a, .footer-bottom, .compare-table) { font-family: var(--font-body); }
+/* etiquetas e destaques pequenos: letra reta anterior */
+body :is(h4, h5, h6, .label, .label2, .section-label, .tag-gold, .villa-card-tag, th) { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+body :is(h4, h5, h6, .label, .label2, .section-label, .tag-gold, .villa-card-tag, th) { font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+
+#header.scrolled { background: color-mix(in srgb, var(--ivory) 95%, transparent); box-shadow: 0 1px 0 var(--border); }
+.nav a { letter-spacing: .08em; font-weight: 500; }
+.fab-wa { background: var(--btn-green); color: var(--ivory); border: 1px solid var(--gold-hsto); }
+.fab-wa svg { fill: var(--ivory); }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--emerald); outline: 2px solid color-mix(in srgb, var(--gold-hsto) 55%, transparent); outline-offset: 1px; }
+
+/* ---------- Componentes ---------- */
+.villa-card, .review-card, .booking-box,
+.form-group input, .form-group textarea, .form-group select { background: var(--ivory); }
+.villa-card { border: 1px solid var(--border); box-shadow: 0 10px 40px -24px color-mix(in srgb, var(--forest) 45%, transparent); }
+.villa-card-tag, .tag-gold {
+  background: var(--gold-hsto); color: var(--forest);
+  display: inline-block; padding: .4rem .8rem; border-radius: 2px;
+}
+.label, .section-label { color: var(--emerald); }
+.villas-section { background: var(--sand); }
+
+/* ---------- Botões ----------
+   Principal:  fundo verde escuro, texto Ivory, contorno dourado fino e traço dourado.
+               Hover: passa ao aspeto do secundário (transparente).
+   Secundário: fundo transparente, contorno dourado fino, texto Forest (Ivory sobre
+               fundos escuros). Hover: passa ao aspeto do principal (fundo verde, texto Ivory).
+   Sem hover (telemóvel): estado normal já é identificável; :active dá feedback. */
+.btn, .btn-header, .btn-round {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  padding: .9rem 1.5rem 1rem; border-radius: 2px; border: 1px solid var(--gold-hsto);
+  font-family: var(--font-display); font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; box-shadow: none; transform: none; cursor: pointer;
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+.btn::after, .btn-header::after, .btn-round::after {
+  content: ''; position: absolute; left: 50%; bottom: 6px; width: 18px; height: 1px;
+  background: var(--gold-hsto); transform: translateX(-50%); transition: width .3s ease;
+}
+.btn-header { padding: .6rem 1.5rem .7rem; }
+.btn-header::after { bottom: 4px; width: 12px; }
+
+.btn-primary, .btn-header, .btn-round:not(.line):not(.light) { background: var(--btn-green); color: var(--ivory); }
+.btn-secondary, .btn-outline, .btn-outline-white, .btn-round.line, .btn-round.light { background: transparent; color: var(--forest); }
+/* secundário sobre fundos escuros */
+.cta-banner :is(.btn-secondary, .btn-outline, .btn-outline-white), .page-hero :is(.btn-secondary, .btn-outline, .btn-outline-white),
+.h-band-panel :is(.btn-round.light, .btn-round.line), .footer :is(.btn-secondary, .btn-outline) { color: var(--ivory); }
+
+.btn:focus-visible, .btn-header:focus-visible, .btn-round:focus-visible { outline: 2px solid var(--gold-hsto); outline-offset: 3px; }
+@media (hover: hover) {
+  /* hover trocado: principal ganha o aspeto do secundário e vice-versa */
+  .btn-primary:hover, .btn-header:hover, .btn-round:not(.line):not(.light):hover { background: transparent; color: var(--forest); border-color: var(--gold-hsto); }
+  .btn-secondary:hover, .btn-outline:hover, .btn-outline-white:hover, .btn-round.line:hover, .btn-round.light:hover { background: var(--btn-green); color: var(--ivory); border-color: var(--gold-hsto); }
+  .btn:hover::after, .btn-header:hover::after, .btn-round:hover::after { width: 44px; }
+  .cta-banner .btn-primary:hover, .page-hero .btn-primary:hover, .footer .btn-primary:hover, .h-band-panel .btn-round:not(.line):not(.light):hover { color: var(--ivory); border-color: var(--gold-hsto); }
+}
+.btn:active, .btn-header:active, .btn-round:active { opacity: .85; }
+.btn-text { color: var(--emerald); font-family: var(--font-display); }
+.lang-switcher button.active { background: var(--btn-green); color: var(--ivory); }
+.section-header h2 em, .intro-text h2 em { color: var(--gold-hsto); font-style: normal; }
+.section-header::after { content: ''; display: block; width: 56px; height: 2px; background: var(--gold-hsto); margin: 1.6rem auto 0; }
+.nav a::after { background: var(--gold-hsto); height: 2px; }
+.page-hero-bg, .cta-banner-bg { filter: none; }
+.page-hero-overlay { background: linear-gradient(to top, rgba(16,47,39,.75), rgba(16,47,39,.3)); }
+.cta-banner-overlay { background: rgba(16,47,39,.82); }
+.page-hero .label, .cta-banner .label { color: var(--gold-hsto); }
+.page-hero h1, .cta-banner h2, .cta-banner p { color: var(--ivory); }
+.compare-table th { color: var(--emerald); }
+.compare-table td { color: var(--ink); }
+
+/* ---------- Logo ---------- */
+.logo img { display: block; width: auto; filter: none !important; }
+#header .logo img { height: 78px; }
+#header .logo-w { display: none; }
+#header.scrolled .logo img { height: 78px; }
+
+/* ---------- Rodapé ---------- */
+.footer { background: var(--footer-bg); color: var(--ivory); border-top: 4px solid var(--gold-hsto); }
+.footer-brand p { color: var(--ivory); opacity: .85; }
+.footer-col h5 { color: var(--gold-hsto); }
+.footer-col a { color: var(--ivory); opacity: 1; }
+.footer-col a:hover { color: var(--gold-hsto); }
+.footer-bottom { border-top: 1px solid rgba(242,235,221,.2); color: var(--ivory); opacity: .8; }
+.footer .logo-foot { height: 130px; margin-bottom: .5rem; }
+
+/* ---------- Página inicial ---------- */
+
+.h-intro { padding: 4rem 0 3rem; }
+.h-intro-grid { display: grid; grid-template-columns: 5fr 7fr; column-gap: 4.5rem; row-gap: 3rem; align-items: start; }
+.h-offset { position: relative; }
+.h-offset::before { content: ''; position: absolute; left: -1.8rem; top: -1.8rem; width: 55%; height: 45%; background: var(--pale); z-index: 0; }
+.h-offset img { position: relative; z-index: 1; width: 100%; height: 440px; object-fit: cover; display: block; border-radius: 3px; }
+.h-intro h2 { color: var(--emerald); margin: .6rem 0 1.2rem; }
+.h-intro h2 em { color: var(--gold-hsto); font-style: normal; }
+.h-intro p { margin-bottom: 1.6rem; max-width: 36rem; }
+.h-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+.h-wide { grid-column: 1 / -1; }
+.h-wide img { width: 100%; height: 400px; object-fit: cover; display: block; border-radius: 6px; }
+
+.h-band { padding: 2rem 0 4rem; }
+.h-band-grid { display: grid; grid-template-columns: 5fr 7fr; border-radius: 4px; overflow: hidden; }
+.h-band-img { min-height: 420px; }
+.h-band-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.h-band-panel { background: var(--forest); color: var(--ivory); padding: 4rem 4.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 4px solid var(--gold-hsto); }
+.h-band-panel .label { color: var(--gold-hsto); }
+.h-band-panel h2 { color: var(--ivory); margin: .6rem 0 1.2rem; }
+.h-band-panel h2 em { color: var(--gold-hsto); }
+.h-band-panel p { color: var(--ivory); opacity: .9; margin-bottom: 2rem; max-width: 32rem; }
+.h-band-panel .btn-round { align-self: flex-start; }
+
+.h-map { --map-h: 420px; position: relative; isolation: isolate; margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--gold-hsto); line-height: 0; }
+.h-map iframe, .h-map-hsto { display: block; width: 100%; height: var(--map-h); border: 0; margin: 0; padding: 0; }
+@media (max-width: 768px) { .h-map { --map-h: 320px; } }
+/* mapa 3D HSTO (MapLibre + MapTiler): o iframe do Google fica como alternativa se o mapa não carregar */
+.h-map-hsto[hidden], .h-map.is-hsto iframe { display: none; }
+.h-map-hsto { background: var(--ivory); line-height: normal; font-family: var(--font-body); }
+.h-map-hsto .maplibregl-ctrl-group { background: var(--ivory); border: 1px solid var(--gold-hsto); border-radius: 2px; box-shadow: none; }
+.h-map-hsto .maplibregl-ctrl-group button + button { border-top: 1px solid color-mix(in srgb, var(--gold-hsto) 45%, transparent); }
+.h-map-hsto .maplibregl-ctrl-icon { filter: sepia(1) hue-rotate(95deg) saturate(.7) brightness(.45); }
+.h-map-hsto .maplibregl-ctrl-attrib { background: color-mix(in srgb, var(--ivory) 85%, transparent); color: var(--forest); font-size: 10px; }
+.h-map-hsto .maplibregl-ctrl-attrib a { color: var(--forest); }
+.h-map-hsto .maplibregl-cooperative-gesture-screen { background: color-mix(in srgb, var(--forest) 70%, transparent); font-family: var(--font-body); }
+.h-pin3d { display: block; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; transition: transform .25s ease; transform-origin: 50% 100%; }
+.h-pin3d svg { display: block; overflow: visible; filter: drop-shadow(0 4px 5px color-mix(in srgb, var(--forest) 35%, transparent)); }
+.h-pin3d .body { fill: var(--emerald); stroke: var(--ivory); stroke-width: 2; }
+.h-pin3d .ring { fill: var(--emerald); stroke: var(--gold-hsto); stroke-width: 2; }
+.h-pin3d .dot { fill: var(--gold-hsto); }
+.h-pin3d .sh { fill: color-mix(in srgb, var(--forest) 25%, transparent); }
+.h-pin3d:hover, .h-pin3d:focus-visible { transform: translateY(-3px) scale(1.08); }
+.h-pin3d:focus-visible { outline: 2px solid var(--gold-hsto); outline-offset: 4px; }
+.h-popup .maplibregl-popup-content { background: var(--ivory); color: var(--forest); border: 1px solid var(--gold-hsto); border-radius: 4px; padding: 1rem 1.1rem; box-shadow: 0 12px 30px -12px color-mix(in srgb, var(--forest) 55%, transparent); animation: hPopIn .25s ease; }
+.h-popup .maplibregl-popup-tip { border-top-color: var(--gold-hsto) !important; border-bottom-color: var(--gold-hsto) !important; }
+.h-popup .maplibregl-popup-close-button { color: var(--forest); font-size: 20px; padding: 0 .5rem; }
+.h-pop-name { margin: 0 0 .15rem; font-size: var(--fs-text); color: var(--emerald); font-weight: 600; line-height: 1.3; }
+.h-pop-addr { margin: 0 0 .8rem; font-size: var(--fs-small); line-height: 1.4; }
+.h-pop-btn { display: inline-block; padding: .5rem .9rem; border: 1px solid var(--gold-hsto); border-radius: 2px; background: var(--btn-green); color: var(--ivory); font-size: var(--fs-small); line-height: 1.2; text-decoration: none; transition: background .2s, color .2s; }
+.h-pop-btn:hover, .h-pop-btn:focus-visible { background: transparent; color: var(--forest); }
+@keyframes hPopIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .h-pin3d, .h-popup .maplibregl-popup-content { transition: none; animation: none; } }
+
+.h-cards-sec { padding: 2rem 0 6rem; }
+.h-cards-title { text-align: center; margin-bottom: 3rem; }
+.h-cards-title h2 { color: var(--emerald); }
+.h-cards-title::after { content: ''; display: block; width: 56px; height: 2px; background: var(--gold-hsto); margin: 1.4rem auto 0; }
+.h-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.h-card img { width: 100%; height: 230px; object-fit: cover; display: block; border-radius: 6px; margin-bottom: 1.2rem; }
+.h-card h3 { color: var(--emerald); margin-bottom: .5rem; }
+.h-card p { color: var(--text-light); margin-bottom: .9rem; }
+.h-card a { font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--emerald); border-bottom: 2px solid var(--gold-hsto); padding-bottom: 2px; }
+.h-card a:hover { color: var(--gold-hsto); }
+
+@media (max-width: 960px) {
+    .h-intro-grid, .h-band-grid { grid-template-columns: 1fr; }
+  .h-offset::before { left: -.8rem; top: -.8rem; }
+  .h-offset img { height: 340px; }
+  .h-wide img { height: 280px; }
+  .h-band-panel { padding: 2.5rem 1.8rem; border-left: 0; border-top: 4px solid var(--gold-hsto); }
+  .h-band-img { min-height: 260px; }
+  .h-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  #header .logo img, #header.scrolled .logo img { height: 56px; }
+  .footer .logo-foot { height: 100px; }
+}
+
+/* ---------- Telemóvel: Reservar sai do header e vive no menu hambúrguer ---------- */
+.mobile-menu .mobile-book { display: none; }
+@media (max-width: 1024px) {
+  #header .btn-header, #header .header-right .lang-switcher { display: none; }
+  .mobile-menu .mobile-book { display: inline-flex; margin-top: 1rem; background: var(--btn-green); color: var(--ivory); font-family: var(--font-body); font-weight: 500; padding: .9rem 2.2rem 1rem; }
+  .mobile-menu .mobile-book:hover { color: var(--ivory); }
+}
+@media (max-width: 768px) {
+  :root { --fs-small: .8125rem; }
+  .mobile-menu { gap: 1.5rem; }
+  .nav a, .lang-switcher { letter-spacing: .06em; }
+  .btn, .btn-round { padding: .8rem 1.2rem .9rem; }
+  .footer-grid { gap: 1.6rem; }
+  .h-actions .btn, .h-actions .btn-round { flex: 1 1 auto; }
+}
+.mobile-menu a:not(.mobile-book) { font-weight: 500; }
+
+/* Cabeçalho das páginas interiores: tamanhos originais (exceção aos três tamanhos) */
+body .page-hero h1 { font-size: clamp(2.4rem, 5vw, 4.6rem) !important; letter-spacing: -.02em; line-height: 1.1; }
+body .page-hero .label { font-size: .7rem !important; letter-spacing: .18em; }
+
+/* ---------- Hero da página inicial: layout original + barra de reservas ---------- */
+.h-hero { --hero-gap: 1.5rem; --avail-half: 3.5rem; min-height: 100vh; min-height: 100svh; box-sizing: border-box; padding: calc(var(--header-h) + var(--hero-gap)) 0 calc(var(--avail-half) + 2rem); display: flex; align-items: flex-start; isolation: isolate; overflow-x: clip; }
+.h-hero .container { width: 100%; max-width: 1360px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 1.5rem; position: relative; }
+.h-hero-text { grid-column: 1 / 6; grid-row: 1; align-self: center; position: relative; z-index: 2; padding: 4rem 1rem 0 0; }
+.h-hero-text h1 { color: var(--emerald); line-height: 1.1; margin: .8rem 0 1.4rem; }
+.h-hero-text h1 em { color: var(--gold-hsto); font-style: normal; }
+.h-hero-text p.lead { color: var(--forest); max-width: 28rem; margin-bottom: 2rem; }
+.h-hero-main { grid-column: 6 / 13; grid-row: 1; aspect-ratio: 3 / 2; min-height: 0; max-height: min(560px, calc(100svh - var(--header-h) - 10rem)); border-radius: 4px; overflow: hidden; z-index: 1; }
+.h-hero-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* barra de reservas */
+.h-avail { grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 3; margin-top: 2.25rem; transform: translateY(50%); background: var(--ivory); border: 1px solid var(--gold-hsto); border-radius: 2px; padding: 1rem 1.25rem; display: grid; grid-template-columns: 1.6fr 1fr 1fr .7fr auto; align-items: end; }
+.h-avail-field { display: flex; flex-direction: column; gap: .1rem; padding: 0 1.1rem; border-right: 1px solid color-mix(in srgb, var(--gold-hsto) 45%, transparent); min-width: 0; }
+.h-avail-field:first-child { padding-left: 0; }
+.h-avail label { color: var(--emerald); letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+.h-avail input, .h-avail select { width: 100%; box-sizing: border-box; min-height: 44px; padding: .4rem 0; border: 0; border-bottom: 1px solid transparent; border-radius: 0; background: transparent; color: var(--ink); font-family: var(--font-body); appearance: none; -webkit-appearance: none; }
+.h-avail select { background-image: linear-gradient(45deg, transparent 50%, var(--emerald) 50%), linear-gradient(135deg, var(--emerald) 50%, transparent 50%); background-position: calc(100% - 9px) 55%, calc(100% - 4px) 55%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 1.5rem; }
+.h-avail input:focus-visible, .h-avail select:focus-visible { outline: 2px solid var(--gold-hsto); outline-offset: 2px; }
+.h-avail-field.is-invalid :is(input, select) { border-bottom-color: var(--font-color-error); }
+.h-avail .btn-round { margin-left: 1.1rem; white-space: nowrap; background: var(--btn-green); color: var(--ivory); }
+.h-avail-error { grid-column: 1 / -1; margin: .7rem 0 0; color: var(--font-color-error); }
+.h-avail-error[hidden] { display: none; }
+@media (max-width: 1024px) {
+  .h-hero { --avail-half: 5rem; }
+  .h-avail { grid-template-columns: 1fr 1fr 1fr; row-gap: .9rem; }
+  .h-avail-field:first-child { grid-column: 1 / -1; padding-right: 0; border-right: 0; }
+  .h-avail-field:nth-child(2) { padding-left: 0; }
+  .h-avail-field:nth-child(4) { border-right: 0; }
+  .h-avail .btn-round { grid-column: 1 / -1; margin-left: 0; }
+}
+@media (max-width: 960px) {
+  .h-hero { --avail-half: 8rem; display: block; min-height: 0; }
+  .h-hero .container { display: flex; flex-direction: column; gap: 1.5rem; }
+  .h-hero-text { padding: 1rem 0 0; }
+  .h-hero-main { aspect-ratio: auto; max-height: none; min-height: 0; height: 340px; }
+  .h-avail { margin-top: 0; }
+}
+@media (max-width: 640px) {
+  .h-hero { --avail-half: 10.5rem; }
+  .h-avail { grid-template-columns: 1fr 1fr; padding: .9rem 1rem 1.1rem; }
+  .h-avail-field, .h-avail-field:nth-child(2), .h-avail-field:nth-child(4) { padding: 0; border-right: 0; border-bottom: 1px solid color-mix(in srgb, var(--gold-hsto) 45%, transparent); }
+  .h-avail-field:nth-child(2) { padding-right: .6rem; }
+  .h-avail-field:nth-child(3) { padding-left: .6rem; }
+  .h-avail-field:nth-child(4) { grid-column: 1 / -1; }
+  .h-avail .btn-round { width: 100%; }
+}
+@media (max-width: 359px) { .h-hero { --avail-half: 13rem; } .h-avail { grid-template-columns: 1fr; } .h-avail-field:nth-child(n) { padding: 0; } }
+
+/* ---------- Fundo fixo dos heroes (efeito igual ao .cta-banner, sem background-attachment) ----------
+   A camada .fx-img é fixa ao viewport e só é visível dentro da janela recortada (clip-path) do hero;
+   a opacidade (--fx-o) é atualizada em main.js com um decréscimo muito ligeiro durante o scroll. */
+.page-hero { clip-path: inset(0); }
+.fx-img { position: fixed; inset: 0; z-index: -1; background: var(--fx-tint, none), var(--fx-src) center / cover no-repeat; opacity: var(--fx-o, 1); pointer-events: none; will-change: opacity; }
+.page-hero .fx-img { z-index: 0; }
+/* telemóvel: sem fundo fixo (desempenho/compatibilidade); a imagem acompanha o hero */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .fx-img { position: absolute; will-change: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .fx-img { opacity: 1; } }
+
+/* ---------- Continuidade do fundo: a foto da página prolonga-se, esbatida, atrás de todo o conteúdo ----------
+   Camada fixa (fica atrás das secções transparentes e dos hero); o degradê marfim é mais leve no topo e
+   só ganha força para lá de metade do ecrã, por isso a foto continua visível nas laterais e entre secções. */
+body::before { content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(242,235,221,.68) 0%, rgba(242,235,221,.78) 45%, rgba(242,235,221,.9) 75%, rgba(242,235,221,.96) 100%), var(--page-bg, none) center / cover no-repeat; opacity: var(--page-o, 1); }
+body:has(.h-hero) { --page-bg: url('../images/nazare-1.jpg'); }
+body:has(.fx-img[style*="bg-suites"]) { --page-bg: url('../images/bg-suites.jpg'); }
+body:has(.fx-img[style*="bg-nazare"]) { --page-bg: url('../images/bg-nazare.jpg'); }
+body:has(.fx-img[style*="bg-contacto"]) { --page-bg: url('../images/bg-contacto.jpg'); }
+@media (min-width: 1025px) { .h-hero { --hero-gap: calc(5.5rem + 50px); } }
+
+/* ---------- Transições em onda animadas (experimental) ----------
+   Ondas SVG periódicas em tons verdes, em movimento contínuo (background-position em loop sem emenda).
+   Aplicadas: topo do rodapé, topo do .cta-banner e base do hero das páginas interiores.
+   Para reverter: apagar este bloco e repor border-top: 4px solid var(--gold-hsto) no .footer. */
+.footer { position: relative; border-top: 0; }
+.footer::before, .cta-banner::before { content: ''; position: absolute; left: 0; right: 0; height: clamp(26px, 4.5vw, 64px); pointer-events: none; z-index: 1; animation: hsto-wave 28s linear infinite; }
+.footer::before { bottom: calc(100% - 1px); background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23102F27' fill-opacity='1' d='M0 70 C240 52 480 52 720 70 S1200 88 1440 70 V100 H0Z'/%3E%3C/svg%3E") bottom / 1200px 100% repeat-x, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23185844' fill-opacity='0.85' d='M0 55 C240 35 480 35 720 55 S1200 75 1440 55 V100 H0Z'/%3E%3C/svg%3E") bottom / 1800px 100% repeat-x, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%2378947F' fill-opacity='0.5' d='M0 40 C240 20 480 20 720 40 S1200 60 1440 40 V100 H0Z'/%3E%3C/svg%3E") bottom / 900px 100% repeat-x; }
+.cta-banner::before { top: -1px; transform: rotate(180deg); background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23F2EBDD' fill-opacity='1' d='M0 70 C240 52 480 52 720 70 S1200 88 1440 70 V100 H0Z'/%3E%3C/svg%3E") bottom / 1200px 100% repeat-x, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%2378947F' fill-opacity='0.4' d='M0 55 C240 35 480 35 720 55 S1200 75 1440 55 V100 H0Z'/%3E%3C/svg%3E") bottom / 1800px 100% repeat-x, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%2378947F' fill-opacity='0.2' d='M0 40 C240 20 480 20 720 40 S1200 60 1440 40 V100 H0Z'/%3E%3C/svg%3E") bottom / 900px 100% repeat-x; }
+@keyframes hsto-wave { from { background-position: 0 100%, 0 100%, 0 100%; } to { background-position: -1200px 100%, 1800px 100%, -900px 100%; } }
+.page-hero { --wv: clamp(22px, 3.5vw, 48px); -webkit-mask: linear-gradient(#000, #000) top / 100% calc(100% - var(--wv) + 1px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V55C1200 75 960 75 720 55S240 35 0 55Z'/%3E%3C/svg%3E") bottom left / 1200px var(--wv) repeat-x; mask: linear-gradient(#000, #000) top / 100% calc(100% - var(--wv) + 1px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V55C1200 75 960 75 720 55S240 35 0 55Z'/%3E%3C/svg%3E") bottom left / 1200px var(--wv) repeat-x; animation: hsto-wave-mask 24s linear infinite; }
+@keyframes hsto-wave-mask { from { -webkit-mask-position: top, 0 bottom; mask-position: top, 0 bottom; } to { -webkit-mask-position: top, 1200px bottom; mask-position: top, 1200px bottom; } }
+@media (prefers-reduced-motion: reduce) { .footer::before, .cta-banner::before, .page-hero { animation: none; } }
+
+/* ---------- Homepage: composição do hero e gestor de reservas ---------- */
+:root { --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 12'%3E%3Cpath fill='none' stroke='%23B08A4F' stroke-width='1.4' stroke-linecap='round' d='M2 6c4-6 8-6 11 0s7 6 11 0 8-6 11 0 5 4 9 0'/%3E%3C/svg%3E"); }
+.h-hero-text .label { display: flex; align-items: center; gap: .8rem; }
+.h-hero-text .label::before { content: ''; width: 2.2rem; height: 1px; background: var(--gold-hsto); }
+.h-hero-text h1 { letter-spacing: -.015em; }
+.h-hero-text p.lead { padding-left: 1rem; border-left: 2px solid var(--gold-hsto); }
+.h-hero-main { position: relative; overflow: visible; box-shadow: 0 24px 50px -28px rgba(16,47,39,.55); }
+.h-hero-main img { border-radius: 4px; }
+.h-hero-main::before { content: ''; position: absolute; inset: 0; transform: translate(16px, 16px); border: 1px solid var(--gold-hsto); border-radius: 4px; z-index: -1; pointer-events: none; }
+.h-hero-badge { position: absolute; left: -1.5rem; bottom: 2rem; z-index: 2; background: var(--ivory); border: 1px solid var(--gold-hsto); border-radius: 2px; padding: .8rem 1.2rem; color: var(--forest); box-shadow: 0 14px 30px -18px rgba(16,47,39,.6); display: grid; gap: .35rem; }
+.h-hero-badge::after { content: ''; height: 10px; background: var(--wave) left center / auto 100% no-repeat; }
+.h-avail { box-shadow: 0 22px 50px -26px rgba(16,47,39,.55); border-top: 2px solid var(--emerald); padding-block: 1.25rem 1.1rem; }
+.h-avail .btn-round { align-self: stretch; display: inline-flex; align-items: center; justify-content: center; }
+.h-avail-field { padding-block: .1rem; }
+.h-intro .label, .h-band .label, .h-cards-sec .label { display: flex; align-items: center; gap: .8rem; }
+.h-intro .label::after, .h-band .label::after, .h-cards-sec .label::after { content: ''; width: 36px; height: 9px; background: var(--wave) left center / contain no-repeat; }
+@media (max-width: 1024px) { .h-hero-badge { left: 1rem; bottom: 1rem; } .h-hero-main::before { transform: translate(10px, 10px); } }
+@media (max-width: 768px) { .h-hero-main::before { display: none; } .h-hero-badge { left: .75rem; bottom: .75rem; padding: .6rem .9rem; } }
+
+/* ---------- Contacto: foto de fundo sempre visível e fixa (sem esbatimento); o véu marfim mantém-se leve ---------- */
+body:has(.fx-img[style*="bg-contacto"])::before { background: linear-gradient(to bottom, rgba(242,235,221,.66), rgba(242,235,221,.74)), var(--page-bg) center / cover no-repeat; opacity: 1; }
+
+/* ---------- Homepage: continuidade abaixo do gestor de reservas ----------
+   Marfim → verde-sálvia suave (localização, com onda no topo) → marfim; a foto já desapareceu nesta zona. */
+.h-intro { background: var(--ivory); }
+/* A onda ancora-se ao próprio gestor de reservas (o hero pode ser mais alto que o conteúdo), por isso passa sempre a meio do formulário.
+   Fica atrás dos campos (z-index -1) e a secção seguinte, opaca e posicionada, tapa o excesso por baixo. */
+.h-hero .container { --wv: clamp(26px, 4vw, 56px); }
+/* A onda vive no contentor (sem stacking context próprio) e não dentro do formulário, para ficar por baixo da borda dele. O fim do contentor coincide com o meio do formulário (translateY 50%). */
+.h-hero .container::after { content: ''; position: absolute; z-index: -1; left: 50%; width: 100vw; transform: translateX(-50%); top: calc(100% - var(--wv) / 2); height: 100vh; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23F2EBDD' d='M0 60C240 25 480 25 720 60S1200 95 1440 60V100H0Z'/%3E%3C/svg%3E") 0 0 / 100vw var(--wv) repeat-x, linear-gradient(var(--ivory), var(--ivory)) 0 100% / 100% calc(100% - var(--wv) + 1px) no-repeat; animation: hsto-sway 34s linear infinite; }
+.h-intro { position: relative; }
+.h-band { --sage-tint: #DFE0D0; position: relative; margin-top: clamp(26px, 4vw, 56px); padding-top: 3rem; background: var(--sage-tint); }
+.h-band::before { content: ''; position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: clamp(26px, 4vw, 56px); pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23DFE0D0' d='M0 60C240 25 480 25 720 60S1200 95 1440 60V100H0Z'/%3E%3C/svg%3E") 0 100% / 100vw 100% repeat-x; animation: hsto-sway-b 38s linear infinite; }
+.h-cards-sec { background: var(--ivory); position: relative; padding-top: 4rem; }
+.h-cards-sec::before { content: ''; position: absolute; left: 50%; top: 1.5rem; width: 56px; height: 14px; transform: translateX(-50%); background: var(--wave) center / contain no-repeat; opacity: .8; }
+
+/* Gestor de reservas transparente: a onda do hero fica visível a atravessá-lo a meio (foto por cima, marfim por baixo) */
+.h-avail { background: color-mix(in srgb, var(--ivory) 94%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+/* Ondas animadas da homepage: o deslocamento é só do padrão (um período = largura do ecrã), por isso a posição e a forma não mudam */
+.h-band::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: clamp(26px, 4vw, 56px); pointer-events: none; z-index: 1;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23F2EBDD' d='M0 60C240 25 480 25 720 60S1200 95 1440 60V100H0Z'/%3E%3C/svg%3E") 0 100% / 100vw 100% repeat-x; animation: hsto-sway-b 44s linear infinite reverse; }
+@keyframes hsto-sway { from { background-position: 0 0, 0 100%; } to { background-position: 100vw 0, 0 100%; } }
+@keyframes hsto-sway-b { from { background-position: 0 100%; } to { background-position: 100vw 100%; } }
+@media (prefers-reduced-motion: reduce) { .h-hero .container::after, .h-band::before, .h-band::after { animation: none; } }
+
+.h-card img[src$="img_ondaspraiadonorte.jpg"] { object-position: 50% 60%; }

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSTO Seafront Rooms</title>
+  <meta name="description" content="Peça a sua reserva no HSTO Seafront Rooms, Nazaré. Respondemos no próprio dia.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css?v=43">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <div class="container">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-d" src="images/brand/symbol-dark.png" alt="HSTO"><img class="logo-w" src="images/brand/symbol-white.png" alt=""></a>
+      <nav class="nav">
+        <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a><a href="experiencia/">Nazaré</a>
+        <a href="contacto/" class="active"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher"><button data-lang-btn="en" class="active">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+        <a href="suites/" class="btn-header"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="suites/"><span class="en">Rooms</span><span class="pt">Quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a><a href="experiencia/">Nazaré</a>
+  <a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a>
+  <div class="lang-switcher" style="margin-top:1rem;"><button data-lang-btn="en">EN</button><span>|</span><button data-lang-btn="pt">PT</button></div>
+  <a href="suites/" class="btn btn-primary mobile-book"><span class="en">Book Now</span><span class="pt">Reservar</span></a>
+</nav>
+
+<div class="page-hero" style="padding-top: var(--header-h);">
+  <div class="page-hero-bg fx-img" data-fx style="--fx-src:url('../images/bg-contacto.jpg');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container"><div class="page-hero-content">
+    <p class="label"><span class="en">Get in touch</span><span class="pt">Fale connosco</span></p>
+    <h1 class="display-1"><span class="en">Contact</span><span class="pt">Contacto</span></h1>
+  </div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3><span class="en">Book direct with us</span><span class="pt">Reserve diretamente connosco</span></h3>
+        <p><span class="en">Tell us your dates, the number of guests and the room you like. We reply the same day.</span><span class="pt">Diga-nos as datas, o número de pessoas e o quarto que prefere. Respondemos no próprio dia.</span></p>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg class="i" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="contact-item-text"><div class="label2">WhatsApp</div><a href="https://wa.me/351927622647" target="_blank" rel="noopener">+351 927 622 647</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+          <div class="contact-item-text"><div class="label2">Email</div><a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-item-text"><div class="label2"><span class="en">Location</span><span class="pt">Localização</span></div><span>Nazaré, Portugal</span></div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="reveal reveal-delay-1" novalidate>
+        <p id="suggestNote" style="margin-bottom:1.25rem;color:var(--text-light);"><span class="en">We have prepared a suggestion to save you time. Change anything you like.</span><span class="pt">Preparámos uma sugestão para lhe poupar tempo. Pode alterar o que quiser.</span></p>
+        <div class="form-row">
+          <div class="form-group"><label for="nome"><span class="en">Name</span><span class="pt">Nome</span></label><input id="nome" name="nome" required></div>
+          <div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="in"><span class="en">Check-in</span><span class="pt">Entrada</span></label><input id="in" type="date" name="in"></div>
+          <div class="form-group"><label for="out"><span class="en">Check-out</span><span class="pt">Saída</span></label><input id="out" type="date" name="out"><p id="dateNote" role="alert" aria-live="polite" hidden style="margin-top:.5rem;color:var(--font-color-error);font-weight:600;"></p></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="suite"><span class="en">Room / Suite</span><span class="pt">Quarto / Suite</span></label>
+            <select id="suite" name="suite" required><option value="">—</option><option data-max="2">Suite Farol</option><option data-max="2">Suite Canhão</option><option data-max="2">Quarto Sete Saias</option><option data-max="4">Quarto Salgado</option><option data-max="2">Quarto Pederneira</option><option data-max="2">Quarto Percebes</option><option data-max="4">Quarto Maré</option><option data-max="2">Quarto Sítio</option><option data-max="2">Quarto Areia</option></select></div>
+          <div class="form-group"><label for="pax"><span class="en">Guests</span><span class="pt">Pessoas</span></label><input id="pax" type="number" min="1" max="16" value="2" name="pax"><p id="paxNote" role="status" aria-live="polite" hidden style="margin-top:.5rem;color:var(--emerald);font-weight:600;"></p></div>
+        </div>
+        <div class="form-group"><label for="msg"><span class="en">Message</span><span class="pt">Mensagem</span></label><textarea id="msg" name="msg"></textarea></div>
+        <button type="submit" class="btn btn-primary"><span class="en">Send request</span><span class="pt">Enviar pedido</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="./" class="logo" aria-label="HSTO Seafront Rooms"><img class="logo-foot" src="images/brand/wordmark-white.png" alt="HSTO Seafront Rooms"></a><p><span class="en">Seafront rooms and suites in Nazaré.</span><span class="pt">Seafront Rooms e suites na Nazaré.</span></p></div>
+      <div class="footer-col"><h5><span class="en">Rooms</span><span class="pt">Quartos</span></h5><a href="suites/"><span class="en">All rooms</span><span class="pt">Todos os quartos</span></a><a href="./#localizacao"><span class="en">Location</span><span class="pt">Localização</span></a></div>
+      <div class="footer-col"><h5><span class="en">Explore</span><span class="pt">Explorar</span></h5><a href="experiencia/">Nazaré</a><a href="contacto/"><span class="en">Contact</span><span class="pt">Contacto</span></a></div>
+      <div class="footer-col"><h5><span class="en">Contact</span><span class="pt">Contacto</span></h5><a href="https://wa.me/351927622647" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:martimmsousa@gmail.com">martimmsousa@gmail.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://maps.app.goo.gl/fssxMec2yd6R4byP6" target="_blank" rel="noopener">Av. da República 6, 2450-104 Nazaré</a></span>
+      <span>© <span class="copy-year">2026</span> HSTO Seafront Rooms. <span class="en">All rights reserved.</span><span class="pt">Todos os direitos reservados.</span></span>
+      <span><a href="../privacidade/">Privacidade</a> <em>·</em> <a href="../cookies/">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js?v=7"></script>
+<script>
+(function(){
+  /* ── Configuração (alterar aqui) ─────────────────────────────
+     CHECKIN_LAST_HOUR: hora local (0–23) a partir da qual já não se sugere
+       check-in no próprio dia. Valor provisório — ajustar ao horário real.
+     DEFAULT_NIGHTS / DEFAULT_GUESTS / DEFAULT_ROOM: sugestão inicial.
+     A capacidade de cada alojamento vem do atributo data-max do <select>.
+     Não existe sistema de disponibilidade ligado, por isso não é verificada. */
+  var CONFIG={CHECKIN_LAST_HOUR:20,DEFAULT_NIGHTS:2,DEFAULT_GUESTS:2,DEFAULT_ROOM:'Suite Farol'};
+
+  var f=document.getElementById('contactForm');
+  if(!f)return;
+  var nome=document.getElementById('nome'),email=document.getElementById('email'),
+      inn=document.getElementById('in'),out=document.getElementById('out'),
+      sel=document.getElementById('suite'),pax=document.getElementById('pax'),msg=document.getElementById('msg'),
+      dateNote=document.getElementById('dateNote'),paxNote=document.getElementById('paxNote'),hint=document.getElementById('suggestNote');
+
+  function pad(n){return String(n).padStart(2,'0')}
+  function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+  function addDays(v,n){var d=new Date(v+'T00:00:00');d.setDate(d.getDate()+n);return iso(d)}
+  function diffDays(a,b){return Math.round((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/864e5)}
+  function validDate(v){return /^\d{4}-\d{2}-\d{2}$/.test(v)&&+v.slice(0,4)>=2000}
+  function bi(pt,en){return '<span class="pt">'+pt+'</span><span class="en">'+en+'</span>'}
+  function isPt(){return document.body.classList.contains('is-pt')}
+
+  function firstCheckIn(){var now=new Date();return iso(now.getHours()>=CONFIG.CHECKIN_LAST_HOUR?new Date(now.getFullYear(),now.getMonth(),now.getDate()+1):now)}
+  var minIn=firstCheckIn(),nights=CONFIG.DEFAULT_NIGHTS;
+
+  function showDate(html,el){dateNote.innerHTML=html;dateNote.hidden=false;if(el)el.setCustomValidity('x')}
+  function clearDate(){dateNote.hidden=true;inn.setCustomValidity('');out.setCustomValidity('')}
+
+  function validate(){
+    inn.setCustomValidity('');out.setCustomValidity('');dateNote.hidden=true;
+    if(!inn.value||!out.value)return true;
+    if(inn.value<minIn){showDate(bi('A data de entrada não pode ser anterior a '+minIn.split('-').reverse().join('/')+'.','Check-in cannot be earlier than '+minIn.split('-').reverse().join('/')+'.'),inn);return false}
+    if(out.value<=inn.value){showDate(bi('O check-out tem de ser depois do check-in.','Check-out must be after check-in.'),out);return false}
+    return true;
+  }
+  function setOutMin(){if(validDate(inn.value))out.min=addDays(inn.value,1);else out.min=addDays(minIn,1)}
+
+  function onInChange(){
+    if(!validDate(inn.value)){validate();return}
+    setOutMin();
+    if(inn.value>=minIn&&nights>=1){
+      var wanted=addDays(inn.value,nights);
+      if(!out.value||out.value<=inn.value||out.value!==wanted){
+        var changed=out.value&&out.value!==wanted;
+        out.value=wanted;
+        if(changed)showInfo(bi('Ajustámos a saída para manter a mesma duração da estadia ('+nights+(nights===1?' noite':' noites')+').','We moved check-out to keep the same length of stay ('+nights+(nights===1?' night':' nights')+').'));
+      }
+    }
+    validate();
+  }
+  function onOutChange(){
+    if(validDate(out.value)&&validDate(inn.value)&&out.value>inn.value)nights=diffDays(inn.value,out.value);
+    validate();
+  }
+  function showInfo(html){dateNote.innerHTML=html;dateNote.hidden=false;dateNote.style.color='var(--emerald)';setTimeout(function(){if(dateNote.style.color==='var(--emerald)'){dateNote.hidden=true}},4500)}
+  // correção automática só ao sair do campo, para não interromper a escrita manual
+  inn.addEventListener('blur',function(){
+    if(validDate(inn.value)&&inn.value<minIn){inn.value=minIn;onInChange();
+      showInfo(bi('Ajustámos a entrada para a primeira data disponível.','We moved check-in to the first available date.'))}
+  });
+  out.addEventListener('blur',function(){
+    if(validDate(out.value)&&validDate(inn.value)&&out.value<=inn.value){out.value=addDays(inn.value,Math.max(nights,1));onOutChange();
+      showInfo(bi('Ajustámos a saída para depois da entrada.','We moved check-out to after check-in.'))}
+  });
+  inn.addEventListener('change',function(){dateNote.style.color='var(--font-color-error)';onInChange()});
+  out.addEventListener('change',function(){dateNote.style.color='var(--font-color-error)';onOutChange()});
+
+  /* Capacidade */
+  function maxFor(o){var m=parseInt(o&&o.getAttribute('data-max'),10);return m>0?m:0}
+  function checkPax(){
+    var o=sel.options[sel.selectedIndex],max=maxFor(o);
+    pax.max=max||16;pax.setCustomValidity('');
+    var v=parseInt(pax.value,10);
+    if(!max){paxNote.hidden=true;return true}
+    if(v>max){
+      pax.value=max;
+      var n=o.textContent,s=max===1?'':'s';
+      paxNote.innerHTML=bi((n.indexOf('Suite')===0?'A ':'O ')+n+' aceita no máximo '+max+' pessoa'+s+'. Ajustámos o número de pessoas.',n+' sleeps up to '+max+' guest'+s+'. We adjusted the number of guests.');
+      paxNote.hidden=false;
+    } else paxNote.hidden=true;
+    return true;
+  }
+  sel.addEventListener('change',checkPax);
+  pax.addEventListener('change',checkPax);
+
+  /* Placeholder da mensagem (acompanha o idioma) */
+  function setPlaceholder(){msg.placeholder=isPt()?'Ex.: chegada prevista às 18h, pedido de berço, alergias…':'E.g. expected arrival at 6 pm, baby cot, allergies…'}
+  setPlaceholder();document.addEventListener('DOMContentLoaded',function(){setTimeout(setPlaceholder,0)});window.addEventListener('load',setPlaceholder);
+  document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.addEventListener('click',function(){setTimeout(setPlaceholder,0)})});
+
+  /* Pesquisa vinda do hero da página inicial (?in=&out=&pax=); a validação normal continua a aplicar-se */
+  var qs=new URLSearchParams(location.search),qIn=qs.get('in'),qOut=qs.get('out'),qPax=parseInt(qs.get('pax'),10);
+  if(validDate(qIn||'')&&qIn>=minIn){inn.value=qIn;if(validDate(qOut||'')&&qOut>qIn)out.value=qOut}
+  if(qPax>0&&qPax<=4)pax.value=qPax;
+  var qSuite=qs.get('suite');if(qSuite)for(var q=0;q<sel.options.length;q++)if(sel.options[q].textContent===qSuite){sel.selectedIndex=q;break}
+  /* Sugestão inicial — só uma vez, e apenas em campos ainda vazios */
+  inn.min=minIn;setOutMin();
+  if(!inn.value)inn.value=minIn;
+  if(!out.value)out.value=addDays(inn.value,nights);
+  if(!sel.value){
+    for(var i=0;i<sel.options.length;i++)if(sel.options[i].textContent===CONFIG.DEFAULT_ROOM&&maxFor(sel.options[i])>=(parseInt(pax.value,10)||CONFIG.DEFAULT_GUESTS)){sel.selectedIndex=i;break}
+  }
+  if(!pax.value)pax.value=CONFIG.DEFAULT_GUESTS;
+  nights=validDate(inn.value)&&validDate(out.value)&&out.value>inn.value?diffDays(inn.value,out.value):CONFIG.DEFAULT_NIGHTS;
+  checkPax();paxNote.hidden=true;validate();
+
+  /* Validação antes do envio (corre antes do envio por email em main.js) */
+  document.addEventListener('submit',function(e){
+    if(e.target!==f)return;
+    var err=null,focus=null;
+    if(!nome.value.trim()){err=bi('Indique o seu nome.','Please enter your name.');focus=nome}
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){err=bi('Indique um email válido.','Please enter a valid email.');focus=email}
+    else if(!validDate(inn.value)||!validDate(out.value)){err=bi('Indique as datas de entrada e saída.','Please choose check-in and check-out dates.');focus=validDate(inn.value)?out:inn}
+    else if(!validate()){focus=inn.validity.customError?inn:out}
+    else if(maxFor(sel.options[sel.selectedIndex])===0){err=bi('Escolha um quarto ou suite.','Please choose a room or suite.');focus=sel}
+    else {
+      var max=maxFor(sel.options[sel.selectedIndex]),v=parseInt(pax.value,10);
+      if(!(v>=1)||v>max){checkPax();if(!(parseInt(pax.value,10)>=1))pax.value=1;err=bi('Número de pessoas ajustado à capacidade — confirme e envie novamente.','Guests adjusted to capacity — please confirm and send again.');focus=pax}
+    }
+    if(focus){
+      e.preventDefault();e.stopImmediatePropagation();
+      if(err){dateNote.style.color='var(--font-color-error)';var t=(focus===pax)?paxNote:dateNote;t.innerHTML=err;t.hidden=false}
+      focus.focus();
+    }
+  },true);
+})();
+</script>
+</body>
+</html>
