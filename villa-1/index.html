@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.endsWith('github.io')?'/'+location.pathname.split('/')[1]+'/':'/'}))</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa da Encosta — JM Villas Nazaré</title>
   <meta name="description" content="Casa da Encosta — moradia com 5 quartos, 10 hóspedes, piscina privada e pequeno-almoço incluído, a 5km de Nazaré. Reserva direta.">

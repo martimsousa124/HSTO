@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.includes('github.io')?'/JMpropriedades/':'/'}))</script>
+  <script>document.head.prepend(Object.assign(document.createElement('base'),{href:location.hostname.endsWith('github.io')?'/'+location.pathname.split('/')[1]+'/':'/'}))</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HSTO Seafront Rooms</title>
   <meta name="description" content="Peça a sua reserva no HSTO Seafront Rooms, Nazaré. Respondemos no próprio dia.">
